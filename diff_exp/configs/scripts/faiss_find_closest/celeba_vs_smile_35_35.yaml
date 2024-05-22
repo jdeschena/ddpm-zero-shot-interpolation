@@ -1,0 +1,13 @@
+seed: 0
+cfg_from: null
+cfg_save_path: null
+source_images: /home/anon/samples/smile_multi_35_35/samples_10000x64x64x3.npz
+source_embeddings: /home/anon/samples/smile_multi_35_35/embeddings.npz
+target_images: /home/anon/samples/orig_datasets/celeba_valid.npz
+target_embeddings: /home/anon/samples/orig_datasets/celeba_valid_embeddings.npz
+save_dir: ./celeba_vs_smile_multi_guid_faiss
+use_cosine_sim: true
+top_k: 5
+n_images: 250
+dist_idx: 0
+suptitle: "Target: celeba; Neighbours: multi guid (3.5, 3.5)"

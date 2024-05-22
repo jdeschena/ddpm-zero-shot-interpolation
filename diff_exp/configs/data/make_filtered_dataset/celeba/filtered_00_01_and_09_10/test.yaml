@@ -1,0 +1,11 @@
+seed: 0
+cfg_from: null
+cfg_save_path: null
+preds_path: data/arrays/celeba/test.pt
+data_split: test
+new_dataset_name: filtered_celeba/thr_00_01_and_09_10
+thr_lists:
+- - 0.0
+  - 0.1
+- - 0.9
+  - 1.0

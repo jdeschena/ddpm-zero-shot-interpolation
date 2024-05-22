@@ -1,0 +1,21 @@
+lightning
+omegaconf
+python-dotenv
+torchmetrics
+tensorboardX
+wandb
+black
+einops
+matplotlib
+jupyterlab
+ipywidgets
+pyyaml
+scikit-learn
+seaborn
+timm
+umap-learn
+thop
+blobfile==2.0.0  # there is a bug with 2.1.0 and python 3.8 with Union types
+torch-fidelity
+tabulate
+transformers

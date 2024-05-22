@@ -1,0 +1,22 @@
+seed: 0
+cfg_from: null
+cfg_save_path: null
+train_data_lib: diff_exp.data.attribute_celeba_dataset
+valid_data_lib: null
+train_save_path: ./datasets/young_old_ensemble_5
+valid_save_path: null
+is_rates: "0:2,1:1"
+
+train_dataset:
+  target_attr: "Young"
+  data_dir: "../data"
+  split: "train"
+  filter_path: ../data/young_old_extreme_5_ensemble/train.txt
+
+train_transform: 
+- - center_crop
+  - size: 178
+- - resize
+  - size: 64
+
+valid_transform: "default"

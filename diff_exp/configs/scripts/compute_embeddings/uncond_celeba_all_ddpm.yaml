@@ -1,0 +1,9 @@
+seed: 0
+cfg_from: null
+cfg_save_path: null
+model_name: openai/clip-vit-base-patch32
+batch_size: 128
+device: cuda
+input_npz: /home/anon/samples/uncond_celeb_all_ddpm/samples_10000x64x64x3.npz
+output_npz: /home/anon/samples/uncond_celeb_all_ddpm/embeddings.npz
+num_workers: 12

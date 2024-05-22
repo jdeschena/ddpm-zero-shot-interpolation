@@ -1,0 +1,49 @@
+seed: 0
+cfg_from: null
+cfg_save_path: null
+device: cuda
+max_steps: 5000
+eval_every: 500
+n_eval_batch: 50
+log_every: 100
+n_devices: 1
+use_wandb: true
+wandb_project: male-classifier
+recover_path: null
+data_lib: diff_exp.data.attribute_celeba
+arch_lib: diff_exp.models.efficientnet
+optim_lib: diff_exp.optim.sgd
+dataset:
+  target_attr: Male
+  data_dir: ./data
+  filter_path: null
+  batch_size: 256
+  num_workers: 12
+  crop_size:
+  - 178
+  - 178
+  resize_shape:
+  - 64
+  - 64
+  normalize: true
+  mean:
+  - 0.5
+  - 0.5
+  - 0.5
+  std:
+  - 0.5
+  - 0.5
+  - 0.5
+  shuffle_train: true
+  shuffle_valid: false
+  shuffle_test: false
+arch:
+  size: s
+  num_classes: 2
+optim:
+  lr: 0.1
+  momentum: 0.9
+  dampening: 0.0
+  weight_decay: 0.0
+  nesterov: false
+  maximize: false

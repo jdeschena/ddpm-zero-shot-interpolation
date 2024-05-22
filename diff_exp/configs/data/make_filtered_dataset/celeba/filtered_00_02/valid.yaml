@@ -1,0 +1,9 @@
+seed: 0
+cfg_from: null
+cfg_save_path: null
+preds_path: data/arrays/celeba/valid.pt
+data_split: valid
+new_dataset_name: filtered_celeba/thr_00_02
+thr_lists:
+- - 0.0
+  - 0.2

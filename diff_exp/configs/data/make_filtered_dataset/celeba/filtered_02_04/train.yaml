@@ -1,0 +1,10 @@
+seed: 0
+cfg_from: null
+cfg_save_path: null
+preds_path: data/arrays/celeba/train.pt
+data_split: train
+new_dataset_name: filtered_celeba/thr_02_04
+
+thr_lists:
+- - 0.2
+  - 0.4

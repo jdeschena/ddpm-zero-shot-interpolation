@@ -1,0 +1,13 @@
+seed: 0
+cfg_from: null
+cfg_save_path: null
+parent_dir: ./out_npz_datasets
+split: train
+transform: 
+- - to_tensor
+- - center_crop
+  - size: 178
+- - resize
+  - size: 64
+- - rearrange
+  - str: "c h w -> h w c"

@@ -1,0 +1,71 @@
+seed: 0
+cfg_from: null
+cfg_save_path: null
+device: cuda
+batch_size: 64
+max_steps: 5_000
+eval_every: 1000
+n_eval_batch: 10
+log_every: 10
+save_every: 1000
+gpus: 1
+num_workers: 10
+use_wandb: false
+wandb_project: smile_classifier_calibrate
+recover_path: /home/anon/artifacts/test_classifiers/smile_64_64_cls_longer.ckpt
+#recover_path: /raid/users/anon/artifacts/test_classifiers/smile_64_64_cls_longer.ckpt
+eval_only: false
+train_lib: diff_exp.data.attribute_celeba_dataset
+valid_lib: diff_exp.data.attribute_celeba_dataset
+
+arch_lib: diff_exp.models.efficientnet
+optim_lib: diff_exp.optim.sgd
+t_scale_shape: [1]
+scaling_keys: classifier.1.weight, classifier.1.bias
+train_data:
+  target_attr: Smiling
+  data_dir: ./data
+  split: train
+  filter_path: null
+valid_data:
+  target_attr: Smiling
+  data_dir: ./data
+  split: train
+  filter_path: null
+arch:
+  size: s
+  num_classes: 2
+optim:
+  lr: 0.1
+  momentum: 0.9
+  dampening: 0.0
+  weight_decay: 0.0
+  nesterov: false
+  maximize: false
+
+train_transforms: 
+- - to_tensor
+- - center_crop
+  - size: 178
+- - resize
+  - size: 64
+- - normalize
+  - mean: 0.5, 0.5, 0.5
+  - std: 0.5, 0.5, 0.5
+- - rand_horizontal_flip
+  - p: 0.5
+
+valid_transforms:
+- - to_tensor
+- - center_crop
+  - size: 178
+- - resize
+  - size: 64
+- - normalize
+  - mean: 0.5, 0.5, 0.5
+  - std: 0.5, 0.5, 0.5
+
+log_transform:
+- - normalize
+  - mean: -1, -1, -1
+  - std: 2, 2, 2

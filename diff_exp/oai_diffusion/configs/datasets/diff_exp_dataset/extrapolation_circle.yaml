@@ -1,0 +1,17 @@
+seed: 0
+cfg_from: null
+cfg_save_path: null
+train_data_lib: diff_exp.data.quadrant_circle
+valid_data_lib: diff_exp.data.quadrant_circle
+train_save_path: ./datasets/extrapolation_circle_diffusion
+valid_save_path: ./datasets/extrapolation_circle_classifier
+train_transform: null
+valid_transform: null
+train_dataset:
+  img_size: 64
+  radius: 2
+  mode: bl
+valid_dataset:
+  img_size: 64
+  radius: 2
+  mode: all

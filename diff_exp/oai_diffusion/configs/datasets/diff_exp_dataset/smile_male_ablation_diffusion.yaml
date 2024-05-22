@@ -1,0 +1,20 @@
+seed: 0
+cfg_from: null
+cfg_save_path: null
+train_data_lib: diff_exp.data.celeba_smile_gender
+valid_data_lib: null
+train_save_path: ./datasets/smile_male_ablation_diffusion
+valid_save_path: null
+
+train_dataset:
+  data_dir: "../data"
+  split: "train"
+  filter_path: "../data/smile_male_ablation/diffusion_train_idxs.txt"
+
+train_transform: 
+- - center_crop
+  - size: 178
+- - resize
+  - size: 64
+
+valid_transform: null

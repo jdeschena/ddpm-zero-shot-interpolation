@@ -1,0 +1,35 @@
+seed: 0
+cfg_from: null
+cfg_save_path: null
+ckpt_paths:
+- /raid/users/anon/artifacts/smile_classifier_handpicked_eval/1j57clxq/checkpoints/epoch=53-step=50000.ckpt
+- /raid/users/anon/artifacts/smile_classifier_handpicked_eval/3r1lw031/checkpoints/epoch=53-step=50000.ckpt
+- /raid/users/anon/artifacts/smile_classifier_handpicked_eval/mq3hwa1x/checkpoints/epoch=53-step=50000.ckpt
+- /raid/users/anon/artifacts/smile_classifier_handpicked_eval/wumegf8t/checkpoints/epoch=53-step=50000.ckpt
+- /raid/users/anon/artifacts/smile_classifier_handpicked_eval/xuy6hpi4/checkpoints/epoch=53-step=50000.ckpt
+arch_lib: diff_exp.models.efficientnet
+data_lib: diff_exp.data.attribute_celeba_dataset
+new_dataset_name: smile_filtered_5_confident_09999
+split: train
+batch_size: 64
+device: cuda
+num_workers: 40
+keep_thr: 0.9999
+arch:
+  size: s
+  num_classes: 2
+data:
+  data_dir: ./data
+  target_attr: Smiling
+  split: train
+  filter_path: null
+
+transform:
+- - to_tensor
+- - center_crop
+  - size: 178
+- - resize
+  - size: 64
+- - normalize
+  - mean: 0.5, 0.5, 0.5
+  - std: 0.5, 0.5, 0.5

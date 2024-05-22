@@ -1,0 +1,8 @@
+seed: 0
+cfg_from: null
+cfg_save_path: null
+model_name: openai/clip-vit-base-patch32
+batch_size: 16
+device: cuda
+input_npz: /home/anon/samples/multi_guid_smile_extreme_thr_01_09_15_35/samples_10000x64x64x3.npz
+output_npz: /home/anon/samples/multi_guid_smile_extreme_thr_01_09_15_35/embeddings.npz

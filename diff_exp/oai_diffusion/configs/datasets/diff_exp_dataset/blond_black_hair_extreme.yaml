@@ -1,0 +1,31 @@
+seed: 0
+cfg_from: null
+cfg_save_path: null
+train_data_lib: diff_exp.data.attribute_celeba_dataset
+valid_data_lib: diff_exp.data.attribute_celeba_dataset
+train_save_path: ./datasets/blond_black_hair_extreme_train
+valid_save_path: ./datasets/blond_black_hair_extreme_train
+
+train_dataset:
+  target_attr: "Black_Hair"
+  data_dir: "../data"
+  split: "train"
+  filter_path: "../data/blond_black_hair_extreme/train.txt"
+
+valid_dataset:
+  target_attr: "Black_Hair"
+  data_dir: "../data"
+  split: "train"
+  filter_path: "../data/blond_black_hair_extreme/train.txt"
+
+train_transform: 
+- - center_crop
+  - size: 178
+- - resize
+  - size: 64
+
+valid_transform:
+- - center_crop
+  - size: 178
+- - resize
+  - size: 64

@@ -1,0 +1,21 @@
+seed: 0
+cfg_from: null
+cfg_save_path: null
+train_data_lib: diff_exp.data.attribute_celeba_dataset
+valid_data_lib: null
+train_save_path: ./datasets/smile_non_smile_celeba_extreme_5_cls
+valid_save_path: null
+
+train_dataset:
+  target_attr: "Smiling"
+  data_dir: "../data"
+  split: "train"
+  filter_path: "../data/smile_filtered_5_confident_09999/train.txt"
+
+train_transform: 
+- - center_crop
+  - size: 178
+- - resize
+  - size: 64
+
+valid_transform: default

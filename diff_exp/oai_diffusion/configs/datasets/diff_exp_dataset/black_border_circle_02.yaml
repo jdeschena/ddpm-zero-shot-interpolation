@@ -1,0 +1,17 @@
+seed: 0
+cfg_from: null
+cfg_save_path: null
+train_data_lib: diff_exp.data.borders_circles
+valid_data_lib: null
+train_save_path: ./datasets/black_border_circle_02
+valid_save_path: null
+train_transform: null
+valid_transform: null
+train_dataset:
+  img_size: 64
+  circle_radius: 2
+  epsilon: 0.20
+  seed: 42
+  n_samples: 1200
+
+

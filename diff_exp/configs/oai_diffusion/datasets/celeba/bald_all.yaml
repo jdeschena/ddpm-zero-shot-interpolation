@@ -1,0 +1,34 @@
+seed: 0
+cfg_from: null
+cfg_save_path: null
+pos_label_save: bald
+neg_label_save: nonbald
+save_prefix: oai_diffusion/datasets/celeba_bald
+split: all
+data_lib: diff_exp.data.attribute_celeba_and_or
+dataset:
+  pos_attributes:
+    - Bald
+  neg_attributes: []  # empty list
+  data_dir: ./data
+  filter_path: null
+  batch_size: 4
+  num_workers: 128
+  crop_size:
+  - 178
+  - 178
+  resize_shape:
+  - 64
+  - 64
+  normalize: false
+  mean:
+  - 0.0
+  - 0.0
+  - 0.0
+  std:
+  - 1.0
+  - 1.0
+  - 1.0
+  shuffle_train: false
+  shuffle_valid: false
+  shuffle_test: false

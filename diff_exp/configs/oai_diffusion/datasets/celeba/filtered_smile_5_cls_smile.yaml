@@ -1,0 +1,27 @@
+seed: 0
+cfg_from: null
+cfg_save_path: null
+pos_label_save: smile
+neg_label_save: nonsmile
+save_prefix: oai_diffusion/datasets/celeba_smile_filtered_5_confident_09999
+train_data_lib: diff_exp.data.attribute_celeba_dataset
+valid_data_lib: diff_exp.data.attribute_celeba_dataset
+
+train_dataset:
+  target_attr: Smiling
+  data_dir: ./data
+  filter_path: data/smile_filtered_5_confident_09999/train.txt
+  split: train
+
+valid_dataset:
+  target_attr: Smiling
+  data_dir: ./data
+  filter_path: data/smile_filtered_5_confident_09999/valid.txt
+  split: valid
+
+transform:
+- - to_tensor
+- - center_crop
+  - size: 178
+- - resize
+  - size: 64

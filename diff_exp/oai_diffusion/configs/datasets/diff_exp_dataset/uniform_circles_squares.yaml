@@ -1,0 +1,16 @@
+seed: 0
+cfg_from: null
+cfg_save_path: null
+train_data_lib: diff_exp.data.circles_squares_uniform
+valid_data_lib: null
+train_save_path: ./datasets/circles_squares_uniform
+valid_save_path: null
+train_transform: null
+valid_transform: null
+train_dataset:
+  img_size: 64
+  radius: 2
+  seed: 42
+  epsilon: 0.2
+
+
