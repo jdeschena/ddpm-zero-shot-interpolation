@@ -1,6 +1,8 @@
 # Going beyond compositions, DDPMs can produce zero-shot interpolations - Code
 
-**Summary**: This repo contains the code for experiments related to the ICML 2024 paper "Going beyond compositions, DDPMs can produce zero-shot interpolations"
+![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)[![Licence](https://img.shields.io/badge/MIT_License-lightgreen?style=for-the-badge)](./LICENSE)[![OpenReview](https://img.shields.io/badge/OpenReview-8C1B13?style=for-the-badge)](https://openreview.net/forum?id=1pj0Sk8GfP)
+
+**Summary**: This repo contains the code for the ICML 2024 paper [Going beyond compositions, DDPMs can produce zero-shot interpolations](https://arxiv.org/abs/2405.19201).
 
 This README file should be sufficient to guide you to run our code and reproduce our results. First, you need to install the requirements in a conda/mamba environment. [If you have troubles running the code, do not hesitate to reach out here](https://x.com/jdeschena).
 
@@ -57,6 +59,9 @@ python datasets/diff_exp_dataset.py --cfg_from configs/datasets/diff_exp_dataset
 The DDPM presented in the main paper consists of an unconditional diffusion model and a classifier for guidance. As training DDPM is compute intensive, the best results are obtained with multi-gpu machines. Using a machine with 2x4090 GPUs, it is possible to run the following experiment (250k steps) in 19 to 21 hours (depends on details on your machine).
 ```bash
 # Run from diff_exp/oai_diffusion
+# Note: you can run this script with one GPU as well, it will just be slower. In this case, use the commented exports:
+# export CUDA_VISIBLE_DEVICES=0
+# export N_GPUS=1
 export CUDA_VISIBLE_DEVICES=0,1
 export N_GPUS=2
 export OPENAI_LOGDIR=<location to store checkpoints>
@@ -71,6 +76,9 @@ python scripts/classifier_train.py --cfg_from configs/scripts/classifier_train/s
 After training (see above), you can sample from the unconditional model or with multi-guidance as follows. Naturally, you need to provide the paths to your trained models.
 ```bash
 # run from diff_exp/oai_diffusion
+# Note: you can run this script with one GPU as well, it will just be slower. In this case, use the commented exports:
+# export CUDA_VISIBLE_DEVICES=0
+# export N_GPUS=1
 export CUDA_VISIBLE_DEVICES=0,1
 export N_GPUS=2
 export OPENAI_LOGDIR=<location to store checkpoints>
@@ -124,4 +132,16 @@ python scripts/classifier_train_spectral_norm.py
 python scripts/image_train_cfg.py
 # Sample
 python scripts/image_sample_cfg.py
+```
+
+
+## Cite as:
+```
+@inproceedings{deschenaux2024going,
+  title={Going beyond compositional generalization, DDPMs can produce zero-shot interpolation},
+  author={Deschenaux, Justin and Krawczuk, Igor and Chrysos, Grigorios G and Cevher, Volkan},
+  year={2024},
+  booktitle={International Conference on Machine Learning (ICML)},
+  year={2024}
+}
 ```
