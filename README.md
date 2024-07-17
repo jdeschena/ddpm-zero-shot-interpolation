@@ -129,9 +129,9 @@ python scripts/classifier_train_spectral_norm.py
 ```bash
 # Run from diff_exp/oai_diffusion
 # Train
-python scripts/image_train_cfg.py
+python scripts/image_train_cfg.py --cfg_from configs/scripts/image_train_cfg/smile_celeba_30k.yaml
 # Sample
-python scripts/image_sample_cfg.py
+python scripts/image_sample_cfg.py --cfg_from configs/scripts/image_sample_cfg/smile_celeba_30k.yaml
 ```
 
 
