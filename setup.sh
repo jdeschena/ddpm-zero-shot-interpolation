@@ -16,7 +16,7 @@ mamba install --yes pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch 
 # Install stuff with conda
 mamba install --yes -c conda-forge mpi4py openmpi gcc nvtop tmux
 # Install faiss
-mamba install -c pytorch faiss-cpu=1.7.4 mkl=2021 blas=1.0=mkl
+mamba install --yes -c pytorch faiss-cpu=1.7.4 mkl=2021 blas=1.0=mkl
 pip install  -r requirements.txt
 # Add flag to enable cuda mpi if not already present
 

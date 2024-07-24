@@ -12,10 +12,11 @@ This README file should be sufficient to guide you to run our code and reproduce
 First, install [mamba via miniforge](https://github.com/conda-forge/miniforge?tab=readme-ov-file#miniforge3), then clone the repo and install the dependencies:
 ```bash
 git clone https://github.com/jdeschena/ddpm-zero-shot-interpolation.git diff_exp
-cd diff_exp
+pushd diff_exp
 # Note: check the script to install dependencies that match your cuda version
 # The script creates an env called `diff_exp` and install dependencies
 source setup.sh  
+popd
 ```
 
 ### Downloading the CelebA dataset
@@ -41,7 +42,7 @@ rm celeba-dataset.zip
 # Run from diff_exp directory
 # The configs for evaluation classifiers are in configs/scripts/train_cls/eval_cls/
 # For example, to train the smile evaluation classifier, run
-python scripts/train_cls.py --cfg_from configs/scripts/train_cls/eval_cls/simple_smile_cls.yaml
+python scripts/train_cls_with_dataset_fabric.py --cfg_from configs/scripts/train_cls_with_dataset_fabric/smile_eval_cls.yaml
 # Calibrate classifier: 
 python scripts/calibrate_with_dataset.py --cfg_from configs/scripts/smile_celeba.yaml
 ```
